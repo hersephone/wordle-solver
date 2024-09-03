@@ -25,6 +25,12 @@ yellow[3] = "!!!!!" #yellow letters from fourth row
 yellow[4] = "!!!!!" #yellow letters from fifth row
 green = "!!!!!" #replace ! with green letters, leave the rest
 
-for x in range (0, len(wrdl)):
-    if spellcheck(green, black, yellow, wrdl[x]) == False: continue
-    print(wrdl[x])
+for y in range(0, 5):
+    black += input("Black letters?\n")
+    green = input("Green letters?\n")
+    if green == "": green = "!!!!!"
+    yellow[y] = input("Yellow letters?\n")
+    if yellow[y] == "": yellow[y] = "!!!!!"
+    for x in range (0, len(wrdl)):
+        if spellcheck(green, black, yellow, wrdl[x]) == False: continue
+        print(wrdl[x])
