@@ -1,10 +1,12 @@
 def spellcheck(green, black, yellow, word): #function to evaluate a candidate word
     for t in range (5):
         if word[t] in black: return False #if a letter is in black return false
-        if green[t] != "!": if word[t] != green[t]: return False #if a green letter isn't in the word return false
+        if green[t] != "!": 
+            if word[t] != green[t]: return False #if a green letter isn't in the word return false
         for u in range (5):
             if word[t] in yellow[u][t]: return False #if a letter is in an indicated wrong position return false
-            if yellow[u][t] != "!": if yellow[u][t] not in word: return False #if a yellow letter isn't in the word return false
+            if yellow[u][t] != "!": 
+                if yellow[u][t] not in word: return False #if a yellow letter isn't in the word return false
     return True
 
 wrdlreader = open('wordle.txt', 'r') #open list of candidate words
